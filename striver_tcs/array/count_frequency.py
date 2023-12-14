@@ -13,8 +13,22 @@ def countFreq(arr, n):
                 count += 1
         print(arr[i], count)
 
+# Solution 2: Using Map
 
-if __name__ == "__main__":
+
+def countFreq2(arr, n):
+    occurrences = {}
+    for i in arr:
+        if i in occurrences:
+            occurrences[i] += 1
+        else:
+            occurrences[i] = 1
+
+    for j in occurrences:
+        print(j, occurrences[j])
+
+
+if __name__ == '__main__':
     arr = [10, 5, 10, 15, 10, 5]
     n = len(arr)
-    countFreq(arr, n)
+    countFreq2(arr, n)
